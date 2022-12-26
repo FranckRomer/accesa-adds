@@ -1,0 +1,52 @@
+.Adds{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: born 1s linear;
+}
+.Adds h1{
+    text-align: center;
+    color: aliceblue;
+}
+
+.Adds video{
+    animation: born .5s linear;
+    width: 80vw;
+    margin: 12vh 10vw  0 10vw;
+    /* border: 1px solid red; */
+}
+
+
+/* --------------------------------------- */
+.accesaAdds h2{
+    text-align: center;
+    color:  aliceblue;
+    margin-top: 30vh;
+    animation: born 2s linear;
+    
+    content: «"Cargando ..."»;  
+}
+
+
+/* ------------------------------- */
+.ended {
+    animation: born 2s linear reverse;
+}
+
+@keyframes born {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;        
+    }
+    75%{
+        content: «"Cargando ...."»;  
+    }
+    100%{
+        content: «"Cargando ....."»;  
+    }
+}
