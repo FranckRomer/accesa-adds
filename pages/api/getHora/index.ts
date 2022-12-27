@@ -3,8 +3,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 const moment = require('moment');
 
 type Data = {
-    name: string
-    hoy:string
+    horaCompleta:string
+    minuto:string
+    diesSegundos:string
 }
 
 export default function handler(
@@ -12,5 +13,9 @@ export default function handler(
     res: NextApiResponse<Data>
 ) {
     const hoy = moment().format('MMMM Do YYYY, h:mm:ss a');
-    res.status(200).json(hoy)
+    res.status(200).json({
+        horaCompleta:hoy,
+        minuto: moment().format('m'),
+        diesSegundos: moment().format('ss')
+    })
 }

@@ -14,12 +14,14 @@
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
     "axios": "^1.2.1",
+    "cron": "^2.1.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "moment": "^2.29.4",
     "next": "13.0.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-js-cron": "^3.0.1",
     "typescript": "4.9.4"
   }
 }

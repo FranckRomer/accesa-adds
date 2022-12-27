@@ -11,6 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [adds, setAdds] = useState(false)
   const [hora, setHora] = useState("Autobuses Train Accesa")
+  const [minuto, setMinuto] = useState("Autobuses Train Accesa")
+  const [diesSegundos, setDiesSegundos] = useState("Autobuses Train Accesa")
   const [error, setError] = useState(null)
   const [video, setVideo] = useState(-1)
   const [videoReturn, setVideoReturn] = useState("")
@@ -22,22 +24,24 @@ export default function Home() {
   const [paradaSiguiente, setParadaSiguiente] = useState(paradas[parada + 1])
   const [cambioParada, setCambioParada] = useState(0)
 
+
+
+
   useEffect(() => {
     setTimeout(() => {
       getHora();
       mostrarAdds();
-
+      // console.log("1 Segundo esperado")
     }, 1000);
   });
 
   const getHora = async () => {
-    // console.log("1 Segundo esperado")
     try {
       // const getHora = await fetch("api/getHora/getHora")
       const res = await axios.get('api/getHora/')
       const data = res.data
       // console.log(data);
-      setHora(data)
+      setHora(data.horaCompleta)
       // setHora(getHora)
     } catch (error: any) {
       setError(error.message)
@@ -52,16 +56,14 @@ export default function Home() {
   }
 
   const mostrarAdds = () => {
-    const minuto = hora.slice(-7, -6);
-    const dies_segundo = hora.slice(-4, -3);
-    // console.log("minuto:" + minuto + ", segundo" + dies_segundo);
+    const minutos = parseInt(hora.slice(-7, -6));
+    const diesSegundos = parseInt(hora.slice(-4, -3));
+    console.log("minuto:" + minutos + ", segundo" + diesSegundos);
     if (!adds) {
-      if (dies_segundo == '0' && (minuto == '0' || minuto == '5')) {
+      if (diesSegundos == 0 && (minutos == 0 || minutos == 5)) {
 
         setVideo(video + 1)
-        if (video > 7) {
-          setVideo(0)
-        }
+        if (video > 7) { setVideo(0) }
         setAdds(true)
         console.log("Se muestra el anuncio");
       }
@@ -76,7 +78,7 @@ export default function Home() {
       setAdds(false)
       setVideoReturn("")
     }
-    if (dies_segundo == '5' && cambioParada == 0) {
+    if (diesSegundos == 5 && cambioParada == 0) {
       setCambioParada(1)
       setTimeout(() => {
         if (parada < paradas.length) {
@@ -118,7 +120,7 @@ export default function Home() {
             <div>
               {paradaActual == user ?
                 <div >
-                  <h4  className={styles.selection_img} >
+                  <h4 className={styles.selection_img} >
                     <Image
                       src="/icons/posicion.png"
                       alt="Posicion"
