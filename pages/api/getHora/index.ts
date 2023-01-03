@@ -12,7 +12,7 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const hoy = moment().format('MMMM Do YYYY, h:mm:ss a');
+    const hoy = moment().format('mm:ss');
     res.status(200).json({
         horaCompleta:hoy,
         minuto: moment().format('m'),

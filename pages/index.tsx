@@ -56,8 +56,8 @@ export default function Home() {
   }
 
   const mostrarAdds = () => {
-    const minutos = parseInt(hora.slice(-7, -6));
-    const diesSegundos = parseInt(hora.slice(-4, -3));
+    const minutos = parseInt(hora.slice(-4, -3));
+    const diesSegundos = parseInt(hora.slice(-2, -1));
     console.log("minuto:" + minutos + ", segundo" + diesSegundos);
     if (!adds) {
       if (diesSegundos == 0 && (minutos == 0 || minutos == 5)) {
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* // *------------------------------------------- */}
       <main className={styles.main}>
-        <div className={styles.linea}></div>
+        {/* <div className={styles.linea}></div> */}
         {/* <h3 className={styles.accesa}>Accesa Adds</h3> */}
         <div className={styles.paradas_puntos}>
           {paradas.map((user, index) => (
@@ -132,7 +132,7 @@ export default function Home() {
                 </div>
                 :
                 <div>
-                  {parada > index ?
+                  {parada > index+1 ?
                     <div className={styles.puntocontian} >
                       <div className={styles.puntoNegro}></div>
                       <p >{index + 1}</p>
@@ -149,9 +149,27 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        {/* //? ---------------------------------- */}
+        <section className={styles.unidades}>
+              <div className={styles.unidad}>
+                <h4>Ruta</h4>
+                <h2>Selva-Maya</h2>
+              </div>
+              <div className={styles.unidad}>
+                <h4>Unidad</h4>
+                <h2>014</h2>
+              </div>
+              <div className={styles.unidad}>
+                <h4>Ramal</h4>
+                <h2>Capu</h2>
+              </div>
+        </section>
         <section className={styles.paradas_contain}>
+        {/* //? ---------------------------------- */}
 
           <div className={styles.paradas}>
+            <h1>Paradas de la Ruta</h1>
             <ul className={styles.parada}>
               {paradas.map((user) => (
                 <li>
