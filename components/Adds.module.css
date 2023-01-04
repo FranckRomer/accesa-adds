@@ -8,14 +8,15 @@
     animation: born 1s linear;
 }
 .Adds h1{
+    margin-top: 0;
     text-align: center;
     color: aliceblue;
 }
 
 .Adds video{
     animation: born .5s linear;
-    width: 80vw;
-    margin: 12vh 10vw  0 10vw;
+    width: 75vw;
+    margin: 15vh 10vw  0 10vw;
     /* border: 1px solid red; */
 }
 

@@ -17,6 +17,8 @@ const Page2 = () => {
                     <div>
                         {paradaActual == user ?
                             <div >
+                                <h4>{user}</h4>
+                                <h4 className={styles.selection} >{index + 1}</h4>
                                 <h4 className={styles.selection_img} >
                                     <Image
                                         src="/icons/posicion.png"
@@ -25,22 +27,33 @@ const Page2 = () => {
                                         height={50}
                                     />
                                 </h4>
-                                <h4>{user}</h4>
-                                <h4 className={styles.selection} >{index + 1}</h4>
                             </div>
                             :
                             <div>
-                                {parada > index + 1 ?
+                                {parada > index ?
                                     <div className={styles.puntocontian} >
-                                        <div className={styles.puntoNegro}></div>
                                         <p>{user}</p>
                                         <p >{index + 1}</p>
+                                        {/* <Image
+                                            className={styles.gris}
+                                            src="/icons/parada.png"
+                                            alt="Posicion"
+                                            width={30}
+                                            height={30}
+                                        /> */}
+                                        <div className={styles.puntoNegro}></div>
                                     </div>
                                     :
                                     <div className={styles.puntocontian}>
-                                        <div className={styles.puntoVerde}></div>
                                         <p>{user}</p>
                                         <p >{index + 1}</p>
+                                        {/* <Image
+                                            src="/icons/parada.png"
+                                            alt="Posicion"
+                                            width={30}
+                                            height={30}
+                                        /> */}
+                                        <div className={styles.puntoVerde}></div>
                                     </div>
 
                                 }
