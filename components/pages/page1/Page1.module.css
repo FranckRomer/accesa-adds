@@ -1,0 +1,272 @@
+.main {
+    align-items: center;
+    height: 100vh;
+    margin: 1rem 2rem;
+    overflow: hidden;
+    animation: born 3.5s linear;
+}
+
+.accesa {
+
+    text-align: right;
+}
+
+.linea {
+    width: calc(100vw -2rem);
+    height: .75rem;
+    background-color: #f9c015;
+    position: absolute;
+    top: 1.7rem;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.hora {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 0;
+    border-bottom: 1px solid black;
+}
+
+.paradas_puntos {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin: 1.5rem 0;
+}
+
+.paradas_puntos h4,
+.paradas_puntos p {
+    width: calc(100vw/18 - 1.5rem);
+    height: 3.2rem;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+.selection_img img {
+    animation: changeImg 1s linear;
+}
+
+
+
+.paradas_contain {
+    width: 100%;
+    height: calc(100vh - 10rem);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+/* //*----------------------------------------------------- */
+.paradas {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 1rem;
+    flex-direction: column;
+    border-right: 1px solid black;
+}
+
+.parada {
+    list-style: decimal-leading-zero;
+    columns: 2;
+}
+
+.parada p {
+    color: black;
+    background-color: transparent;
+    animation: changeParada .5s reverse linear;
+}
+
+.selection {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: .8rem 0;
+    color: red;
+    /* background-color: gainsboro; */
+    animation: changeParada 1s linear;
+}
+
+/* //*----------------------------------------------------- */
+/* //*----------------------------------------------------- */
+.unidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid black;
+    padding: 1.2rem 0;
+    margin-top: 0;
+}
+
+.unidad h4 {
+    margin: 0 2rem;
+}
+
+.unidad h2 {
+    text-align: center;
+}
+
+.unidad {
+    border-right: 1px solid black;
+}
+
+.unidad:last-child {
+    border-right: none;
+}
+
+/* //*----------------------------------------------------- */
+.tiempoSiguiente {
+    margin: 0 5rem;
+    border-bottom: 1px dotted black;
+}
+
+.tiempo {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/*  */
+.visual_paradaAS {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    /* border-bottom: 1px dotted black; */
+}
+
+.info_parada_actual {
+    margin: 0 5rem;
+    /* border-bottom: 1px dotted black; */
+}
+
+.paradaActual,
+.paradaSiguiente {
+    text-align: center;
+    font-size: 2rem;
+    height: 15rem;
+    /* border: 1px solid red; */
+}
+
+.paradaActual h2 {
+    color: black;
+    font-size: 4rem;
+    opacity: 0;
+    animation: changeParadaActualp .3s linear;
+}
+
+.paradaActual h1 {
+    color: red;
+    font-size: 4rem;
+    /* opacity: 0; */
+    animation: changeParadaActual .5s linear;
+}
+
+.paradaSiguiente h2 {
+    color: black;
+    font-size: 4rem;
+    opacity: 0;
+    animation: born .3s linear reverse;
+}
+
+.paradaSiguiente h1 {
+    color: black;
+    font-size: 4rem;
+    /* opacity: 0; */
+    animation: born 1s linear;
+}
+
+/*  */
+/* .puntocontian{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid red;
+  } */
+.puntoNegro {
+    /* filter: invert(75%); */
+    width: 30px;
+    height: 30px;
+    margin: .3rem auto;
+    border-radius: 50%;
+    background-color: grey;
+    animation: changeImg .5s linear reverse;
+}
+
+.puntoVerde {
+    width: 30px;
+    height: 30px;
+    margin: .35rem auto;
+    border-radius: 50%;
+    background-color: blue;
+    animation: changeImg .5s linear reverse;
+}
+
+/* //*----------------------------------------------------- */
+@keyframes changeParada {
+    0% {
+        background-color: transparent;
+        color: black;
+        font-size: 1rem;
+    }
+
+    100% {
+        /* background-color: gainsboro; */
+        color: red;
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes changeImg {
+    0% {
+        width: 30px;
+        height: 30px;
+    }
+
+    100% {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+
+@keyframes changeParadaActual {
+    0% {
+        background-color: transparent;
+        color: black;
+        opacity: 0;
+    }
+
+    100% {
+        color: red;
+        opacity: 1;
+    }
+}
+
+@keyframes changeParadaActualp {
+    0% {
+        color: red;
+        opacity: 1;
+    }
+
+    100% {
+        color: black;
+        opacity: 0;
+    }
+}
+
+@keyframes born {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
