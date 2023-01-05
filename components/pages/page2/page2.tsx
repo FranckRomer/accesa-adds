@@ -14,7 +14,7 @@ const Page2 = () => {
         <main className={styles.main}>
             <section className={styles.lista_paradas}>
                 {paradas.map((user, index) => (
-                    <div>
+                    <div key={index}>
                         {paradaActual == user ?
                             <div >
                                 <h4>{user}</h4>

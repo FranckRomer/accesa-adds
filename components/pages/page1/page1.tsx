@@ -18,7 +18,7 @@ const Page1 = () => {
             {/* <h3 className={styles.accesa}>Accesa Adds</h3> */}
             <div className={styles.paradas_puntos}>
                 {paradas.map((user, index) => (
-                    <div>
+                    <div key={index}>
                         {paradaActual == user ?
                             <div >
                                 <h4 className={styles.selection_img} >
@@ -72,8 +72,8 @@ const Page1 = () => {
                 <div className={styles.paradas}>
                     <h1>Paradas de la Ruta</h1>
                     <ul className={styles.parada}>
-                        {paradas.map((user) => (
-                            <li>
+                        {paradas.map((user, index) => (
+                            <li key={index}>
                                 {paradaActual == user ?
                                     <h4 className={styles.selection} >{user}</h4>
                                     :
