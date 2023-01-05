@@ -18,7 +18,7 @@ const Page2 = () => {
                         {paradaActual == user ?
                             <div >
                                 <h4>{user}</h4>
-                                <h4 className={styles.selection} >{index + 1}</h4>
+                                {/* <h4 className={styles.selection} >{index + 1}</h4> */}
                                 <h4 className={styles.selection_img} >
                                     <Image
                                         src="/icons/posicion.png"
@@ -33,7 +33,7 @@ const Page2 = () => {
                                 {parada > index ?
                                     <div className={styles.puntocontian} >
                                         <p>{user}</p>
-                                        <p >{index + 1}</p>
+                                        {/* <p >{index + 1}</p> */}
                                         {/* <Image
                                             className={styles.gris}
                                             src="/icons/parada.png"
@@ -46,7 +46,7 @@ const Page2 = () => {
                                     :
                                     <div className={styles.puntocontian}>
                                         <p>{user}</p>
-                                        <p >{index + 1}</p>
+                                        {/* <p >{index + 1}</p> */}
                                         {/* <Image
                                             src="/icons/parada.png"
                                             alt="Posicion"
@@ -92,8 +92,8 @@ const Page2 = () => {
                     <Image
                         src="/icons/parada.png"
                         alt="Posicion"
-                        width={120}
-                        height={120}
+                        width={150}
+                        height={150}
                     />
                     <p>
                         {paradaSiguiente}
@@ -112,6 +112,12 @@ const Page2 = () => {
                     </div>
                 </div>
                 <div className={styles.footer_info}>
+                    <Image
+                        src="/icons/descarga.png"
+                        alt="Posicion"
+                        width={30}
+                        height={30}
+                    />
                     <Image
                         src="/icons/play.png"
                         alt="Posicion"
