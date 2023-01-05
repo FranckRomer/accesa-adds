@@ -6,7 +6,7 @@ const Page2 = () => {
     const [paradas, setParadas] = useState([
         "Valsequillo", "CU", "Bomberos", "Cristal", "Dorada", "Clinica", "Centro", "San Francisco", "Fuertes", "China Poblana", "Cuchilla", "Capu", "Boulevard sur", "Telmex", "Noria", "Angelopolis", "Globo", "Via Atlixcayotl"
     ])
-    const [parada, setParada] = useState(9)
+    const [parada, setParada] = useState(5)
     const [paradaAnterior] = useState(paradas[parada - 1])
     const [paradaActual, setParadaActual] = useState(paradas[parada])
     const [paradaSiguiente, setParadaSiguiente] = useState(paradas[parada + 1])
@@ -68,8 +68,8 @@ const Page2 = () => {
                     <Image
                         src="/icons/parada.png"
                         alt="Posicion"
-                        width={100}
-                        height={100}
+                        width={150}
+                        height={150}
                     />
                     <p>
                         {paradaAnterior}
@@ -100,6 +100,14 @@ const Page2 = () => {
                     </p>
                 </div>
             </section>
+            <div className={styles.logo}>
+                <Image
+                    src="/logos/Logo3.png"
+                    alt="Posicion"
+                    width={280}
+                    height={100}
+                />
+            </div>
             <section className={styles.footer}>
                 <div className={styles.footer_ruta}>
                     <div>
@@ -111,6 +119,7 @@ const Page2 = () => {
                         <h3>117</h3>
                     </div>
                 </div>
+
                 <div className={styles.footer_info}>
                     <Image
                         src="/icons/descarga.png"

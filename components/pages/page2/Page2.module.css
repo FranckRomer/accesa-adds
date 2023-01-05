@@ -17,6 +17,7 @@
     text-align: center;
     align-items: flex-end;
     border-bottom: 1px solid black;
+    /* background-color: #f9cc14; */
 }
 
 .lista_paradas p {
@@ -54,8 +55,9 @@
 
 /* //?----------------------------------------------- */
 .paradas {
-    min-height: 75vh;
-    /* border-bottom: 1px solid black; */
+    /* min-height: 75vh; */
+    min-height: 58vh;
+    /* border: 1px solid black; */
     display: grid;
     gap: 1rem;
     align-items: center;
@@ -86,12 +88,18 @@
 .paradaAnterior img {
     filter: grayscale(1);
 }
+/* //?----------------------------------------------- */
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 
+}
 /* //?----------------------------------------------- */
 .footer{
     display: flex;
-    margin: 0.7rem 5%;
-    padding: .5rem 0;
+    /* margin: 0.7rem 5%; */
+    padding: .5rem 5%;
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -99,22 +107,25 @@
     left: 0;
     right: 0;
     border-top: 1px solid black;
+    /* background-color: #06963c; */
 }
 .footer h3{
     font-size: 24px;
     margin: .3rem 1.2rem;
 }
 .footer_ruta{
+    align-items: flex-end;
     display: flex;
     gap: 3rem;
 }
+
 .footer_info{
     display: flex;
     gap: 3rem;
     justify-content: right;
 }
 /* //?----------------------------------------------- */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .main {
         background-color: black;
         color: aliceblue;        
@@ -128,4 +139,4 @@
     .footer_info img{
         filter: invert(1);
     }
-}
+} */
